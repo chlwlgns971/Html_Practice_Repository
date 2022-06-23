@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	/*
+		CSS의 주석은 자바와 동일하다.
+	*/
+	pre, h1{
+		border-width: 5px;
+		border-style: solid;
+		border-color: red;
+		
+		width: 600px;
+		/*margin-left: 20%;*/
+		/*margin: 10px 20px 30px 40px */
+		/*순서대로 위, 오른쪽, 아래, 왼쪽 순서로 margin
+		여러방향을 margin 주고 싶을 땐 width/height가 설정되면 안된다.
+		만약 width/height가 있는 경우 top과 left 기준으로 margin 실행*/
+		/*margin: 10px 20px 30px의 경우 top, left/right, bottom*/
+		/*margin: 10px 20px의 경우 top/bottom, left/right*/
+		/*margin: 10px의 경우 모든 방향에 대해서 10px씩 margin*/
+		margin: 10px auto;
+		/*top/bottom이 10px margin, 좌우는 자동margin(좌우정렬)*/
+		text-align: center; /*글자 가운데 정렬*/
+	}
+	pre{
+		font-size: 2.0em; 
+		padding: 40px;
+	}
+	h1{
+		/*margin은 테두리 밖의 여백, padding은 테두리 안의 여백*/
+		/*padding-top: 20px;
+		padding-bottom: 20px*/
+		/*padding실행시 기존 테두리보다 커지게 됨.(padding만큼)*/
+		padding: 10px 20px;
+	}	
+</style>
+</head>
+<body>
+	<h1>진달래꽃</h1>
+<!-- html주석 형식 -->
+<!-- pre태그를 사용하면 쓴 디자인 간격 등등을 그대로 웹에 보이게 할 수 있다. -->
+<!-- 
+	여백주기
+	margin-top/ margin-right/ margin-bottom/ margin-left
+ -->
+<pre>
+나 보기가 역겨워
+
+가실 때에는
+
+말없이 고이 보내드리오리다
+
+영변의 약산 진달래꽃
+
+아름따다 가실길에
+
+뿌리오리다.
+</pre>
+</body>
+</html>
