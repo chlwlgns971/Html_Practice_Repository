@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 150px;
+            height: 150px;
+        }
+        iframe{
+            display: none;
+        }
+    </style>
+    <script>
+        function playShow(){
+            //iframe을 실행-html요소 검색
+            var a=document.getElementById('ifr');
+            a.style.display='block'
+            a.requestFullscreen();
+        }
+    </script>
+</head>
+<body>
+    <pre>
+        script에서 html요소를 검색하기
+        
+        1. id를 이용하는 방법
+            -document.getElementById('ifr')
+        2. tag이름을 이용하는 방법
+        3. class이름을 이용하는 방법
+    </pre>
+    <p>오디오 예제1</p>
+    <div>
+        <audio src="../multi/old_pop.mp3" controls></audio>
+    </div>
+    <!-- 위처럼 해도 동작을 하나 호환성 문제를 해결하기 위해
+    아래의 방법을 많이 사용한다.(위에게 지원안하면 아래 코드동작) -->
+    <p>오디오 예제2</p>
+    <div>   
+        <audio controls autoplay>
+            <source src="../multi/old_pop.mp3" type="audio/mp3">
+            <source src="old_pop.mp3" type="audio/mp3">
+        <source src="old_pop.wav" type="audio/wav">
+        </audio>
+    </div>
+    <p>비디오 예제</p>
+    <video width="640" height="480" controls>
+        <source src="../multi/trailer.mp4" type="video/mp4">
+        <source src="../multi/trailer.ogv"  type='video/ogv'>
+    </video>
+    <br>
+    <p>유튜브 api를 활용한 비디오예제</p>
+    <img src="../images/탑건.jpg" alt="탑건 공식포스터" onclick="playShow()">
+    이미지 클릭
+    <iframe id="ifr" width="560" height="315" 
+    src="https://www.youtube.com/embed/Mrj9XACVJ8U?autoplay=1&mute=1" 
+    title="YouTube video player">
+    <!-- ?autoplay=1&mute=1
+    autoplay=1: 자동재생
+    mute=1: 음소거
+    구글 정책으로 음소거를 하지 않으면 자동재생을 할 수 없다. -->
+    </iframe>
+</body>
+</html>
