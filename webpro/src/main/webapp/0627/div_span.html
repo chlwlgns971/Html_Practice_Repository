@@ -9,35 +9,80 @@
         div{
             width: 80%;
             height: 500px;
-            border: 3px solid blue;
+            /* border: 3px solid blue; */
             text-align: center;
-            padding: 5px;
+            padding: 10px;
+            box-sizing: border-box;
         }
         .dd{
-            border: 1px dotted orange;
+            /* border: 1px dotted orange; */
+            height: 65%;
+
+        }
+        #div1{
+            border: 3px solid blue;
         }
         #div2{
-            width: 25%;
+            width: calc(25% - 2px);
             float: left;
-            height: 400px;
-            margin-left: 20px;
+            /* height: 400px;
+            margin-left: 20px; */
         }
         #div3{
-            width: 65%;
+            width: calc(70% - 1%);
             float: right;
-            height: 400px;
-            margin-right: 20px;
+            overflow: auto; /*넘치는 부분은 스크롤바로 구현*/
+            /* height: 400px;
+            margin-right: 20px; */
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+        span{
+            background-color: yellow;
+            display: inline-block;
+            /* width: 500px;
+            height: 500px;  */
+            /*인라인요소는 가로세로 길이가 적용되지 않는다.
+            but display: inline-block을 주면 변경 가능하다.*/
         }
     </style>
 </head>
 <body>
-    <div>
-        <h2>사자</h2>
-        <div class="dd" id="div2">
+    <pre>
+        box-sizing: border-box / content-box
+        브라우저의 크기에 따라 각 요소의 크기도 조절하기 위해서 사용
 
+        border-box: 테두리와 여백의 크기를 포함시킨다
+        content-box: 테두리와 여백의 크기를 포함시키지 않고 내용만 포함한다.
+
+        width: calc(70%-1%)
+
+        블럭요소: p, div, table, ul, ol, iframe
+        인라인요소: b, em, i, strong, span, a
+
+        ->인라인 요소는 가로길이 세로길이를 지정할 수 없다.
+        but, diplay요소를 이용해서 가로, 세로 길이를 설정할 수 있다.
+        display: none, inline, block, inline-block
+            -inline은 줄이 안바뀌고 가로세로를 변경할 수 없음
+
+        ->display는 float과 유사하나, 변하지 않는 레이아웃을 구성할 때 주로 float을 사용하고, 
+        동작 과정중에 보였다가 안보였다 하거나 움직이는 동작을 넣을 때 주로 display를 사용한다.
+    </pre>
+    <div id="div1">
+        <h2>사&nbsp;&nbsp;&nbsp;자</h2>
+        <div class="dd" id="div2">
+            <img src="../images/Anne-Marie(앤마리)-2002.jpg">
         </div>
         <div class="dd" id="div3">
-
+            북아프리카와 중동, 서아시아, 유럽, 아라비아에서도 과거엔 서식했었으나 유럽 지역에서는 기원전부터 씨가 말랐고, 
+            인도를 제외한 아시아 지역에서도 19~20세기 부터 하나둘씩 사라져갔다. 
+            북아프리카에서도 1920년 모로코에서 사살되어 이 지역들의 야생 사자는 <b>멸종된 상태</b>이다. 
+            지금은 대부분이 남아프리카 사바나 일대에 서식하고 있고, 남서아프리카의 나미비아 사막[1]에 밀렵으로 멸종된 줄 알았던 사막 사자가 살아남아 있으며 
+            사헬 지대에도 일부 살아남아 있다. 인도의 기르숲이란 곳에도 사자가 약간 남아있기는 하다. 
+            현재도 개체수가 계속 감소 중인 사자기에,[2]나중엔 일부 보호구역에서 소수만이 남을 것이다. 
+            간지나는 비주얼과 강인한 사냥 능력으로 <span>오랫동안 '백수의 왕'으로 불리우며</span> 왕의 상징으로 여겨지는 등 인기를 누려온 동물이다.
         </div>
     </div>
 </body>
