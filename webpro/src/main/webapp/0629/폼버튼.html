@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label{
+            display: inline-block;
+            width: 70px;
+        }
+       table{
+        display: none;
+       }
+       td{
+        width: 100px;
+        height: 50px;
+       }
+       pre{
+        font-size: 1.3em;
+       }
+    </style>
+</head>
+<body>
+    <pre>
+    스크립트에서 html요소를 검색, 접근 방법
+    a=document.getElementById("ID이름")
+
+    aa=document.getElementsByTagName("tag이름")
+    aa[0].style aa[1].style
+    or
+    aa=document.getElementsByTagName("tag이름")[0]
+    aa.style
+
+    input type="text" id="price"에서 입력 한 값을 가져오기-value이용
+    document.getElementById("price").value
+
+    input이 아닌 다른 요소에 값을 출력하기
+    &lt;td id="td1"></td>
+    document.getElementById("td").innerText=값;
+    </pre>
+    <form action="formbutton.jsp" method="get">
+        <label>물품가격</label>
+        <input id="price" type="text" name="price"><br>
+
+        <label>수량</label>
+        <input id="qty" type="text" name="qty"><br>
+
+        <input type="button" value="확인" onclick="calc()">
+        <input type="submit">
+    </form>
+    <br><br>
+    <table border="1">
+        <tr>
+            <td>가격</td>
+            <td>수량</td>
+            <td>금액</td>
+        </tr>
+        <tr>
+            <td id="td1"></td> 
+            <td id="td2"></td>
+            <td id="td3"></td>
+        </tr>
+    </table>
+    <script>
+        //html요소를 검색 접근 방법
+        function calc(){
+           //html요소를 검색 접근 방법
+           var price=parseInt(document.getElementById("price").value);
+           var qty=parseInt(document.getElementById("qty").value);
+           
+           var res=price*qty;
+           //alert("가격: "+price+" 수량: "+qty+" 금액: "+res);
+
+           //table의 display를 block로 설정
+            aa=document.getElementsByTagName("table")[0];
+            aa.style.display="block";
+
+           //출력할 장소 html요소를 검색하여 출력
+            document.getElementById("td1").innerText=price;
+            document.getElementById("td2").innerText=qty;
+            document.getElementById("td3").innerText=res;
+        }
+    </script>
+</body>
+</html>
