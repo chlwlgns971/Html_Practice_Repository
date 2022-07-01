@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+    label{
+        display: inline-block;
+        width: 70px;
+    }
+    form{
+        border: 3px solid blue;
+        padding: 20px;
+        width: calc(50%-1%);
+    }
+    h1,h2{
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+    <h1>연습 1</h1>
+    <h2>이메일 전송화면</h2>
+	<form id="form1">
+        <label>이름</label>
+        <input name="name"><br>
+        <label>이메일</label>
+        <input name="email"><br>
+        <label>내용</label><br>
+        <textarea name="tarea" rows="10" cols="60"></textarea><br>
+        <input type="submit" value="전송">
+        <button>재설정</button>
+    </form>
+    <br><br>
+    <h1>연습 2</h1>
+    <h2>회원가입 화면</h2>
+    <form>
+        <label>이름</label>
+        <input name="name"><br>
+        <label>주소</label>
+        <input name="addr"><br>
+        <label>이메일</label>
+        <input name="email" pattern="[a-zA-Z0-9]+@[a-zA-Z0-9]+(\.[a-z]+){1.2}"><br>
+        <input type="radio">
+        <label>Male</label><br>
+        <input type="radio">
+        <label>Female</label><br>
+        <input type="submit" value="Send">
+        <button>원래대로</button>
+    </form>
+</body>
+</html>

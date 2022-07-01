@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../images/check.png"/>
+    <style>
+        label{
+            display: inline-block;
+            width: 70px;
+        }
+    </style>
+    <script>
+        function proc(){
+            //각 항목의 데이터가 입력되었는지 판단
+            //만약에 입력이 안 되었으면 입력을 유도
+
+            //모든 항목의 입력이 완료되면 submit수행
+
+            //html요소에 접근 검색, 입력한 값을 가져온다.
+            var idValue=document.fr.id.value
+            var emailValue=document.fr.email.value
+            var telValue=document.fr.tel.value
+            
+            //값이 있나 없나 확인(데이터 값의 길이 체크)-trim(),length
+            if(idValue.trim().length<1){
+                alert("id를 입력하세요");
+                return false;
+            }
+            if(emailValue.trim().length<1){
+                alert("이메일을 입력하세요")
+                return false;
+            }
+            if(telValue.trim().length<1){
+                alert("전화번호를 입력하세요.")
+                return false;
+            }
+            //alert("입력 성공")
+            document.fr.submit(); //확인버튼으로 전송기능
+        }
+    </script>
+</head>
+<body>
+    <pre>
+        html요소에 접근 검색
+        id를 이용-document.getElementById("id이름")
+        class를 이용-document.getElementsByClassName("class이름")
+        tag이름을 이용-document.getElementsByTagName("tag이름")
+        name 속성을 이용하는 방법-document.getElementByName("name이름")
+        from name을 거쳐서 name속성을 이용한다. document.fr.id
+    </pre>
+    <form name="fr" action="buttonSubmit.jsp" method="post">
+        <label>아이디</label>
+        <input type="text" name="id"><br>
+
+        <label>이메일</label>
+        <input name="email"><br><!--type="text"는 생략가능-->
+
+        <label>전화번호</label>
+        <input name="tel"><br>
+
+        <button type="submit">전송</button><!--버튼은 타입을 생략하면 기본 submit으로 지정-->
+        <button type="reset">초기화</button>
+        <br><br>
+        <button type="button" onclick="proc()">확인</button>
+    <pre>
+        그냥 button 타입은 기능이 없다
+        따라서 기능을 만들어서 onclick에 넣어줘야한다.
+    </pre>
+    </form>
+    <!--폼 밖에서 버튼생성시 타입을 적지 않으면 submit으로 지정되지 않는다.-->
+    <button onclick="alert('안녕하세요')">전송</button>
+</body>
+</html>

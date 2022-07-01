@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label{
+            display: inline-block;
+            width: 100px;
+            margin:10px auto;
+        }
+        form{
+            width: 70%;
+            margin: 20px auto;
+            border: 3px solid black;
+            padding:10px;
+        }
+        div{
+            width: 80%;
+            margin: 50px auto;
+        }
+        select{
+            width: 170px;
+        }
+    </style>
+</head>
+<body>
+    <form action="select.jsp" method="post">
+        <!-- 아이디-text
+        이름-text
+        자기소개-textarea
+        좋아하는음식-select -->
+        <div>
+        <label>아이디</label>
+        <input name="id"><br>
+        <label>이름</label>
+        <input name="name"><br>
+        <label>좋아하는음식</label>
+        <select name="food">
+            <option>삼겹살</option>
+            <option>떡볶이</option>
+            <option selected>치킨</option>
+            <option>닭갈비</option>
+            <option>족발</option>
+        </select><br>
+        <label>좋아하는음식(여러개 선택가능)</label>
+        <select name="food2" multiple="multiple" size="3">
+            <option>삼겹살</option>
+            <option>떡볶이</option>
+            <option selected>치킨</option>
+            <option>닭갈비</option>
+            <option>족발</option>
+        </select><br>
+        <label>자기소개</label><br>
+        <textarea name="intro" rows="10" cols="60"></textarea><br>
+        <button>확인</button><br>
+        </div>
+    </form>
+</body>
+</html>
