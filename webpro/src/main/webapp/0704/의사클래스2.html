@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td{
+            width: 300px;
+            height: 40px;
+            
+            text-align: center;
+        }
+        th{
+            height: 50px;
+        }
+        table{
+            border: 1px solid blue;
+            margin: 20px auto;
+        }
+        #tab1{
+            border: 1px solid blue;
+            margin: 20px auto;
+        }
+        #tab1 td:nth-child(2n+1), #tab1 th:nth-child(2n+1){
+            background: yellow;
+        }
+        #tab2 th{
+            background: black;
+            color: white;
+        }
+        #tab2 td:nth-child(2n){
+            background: pink;
+        }
+        #tab3 tr:nth-child(2n){
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <table id="tab1" border="1">
+        <tr>
+            <th>이름</th>
+            <th>주소</th>
+            <th>전화번호</th>
+        </tr>
+        <tr>
+            <td>무지개</td>
+            <td>서울</td>
+            <td>010-1234-5678</td>
+        </tr>
+        <tr>
+            <td>아지랑이</td>
+            <td>부산</td>
+            <td>010-0000-0000</td>
+        </tr>
+        <tr>
+            <td>소나기</td>
+            <td>대전</td>
+            <td>010-1111-1111</td>
+        </tr>
+    </table>
+    <table id="tab2" border="1">
+        <tr>
+            <th>이름</th>
+            <th>주소</th>
+            <th>전화번호</th>
+        </tr>
+        <tr>
+            <td>무지개</td>
+            <td>서울</td>
+            <td>010-1234-5678</td>
+        </tr>
+        <tr>
+            <td>아지랑이</td>
+            <td>부산</td>
+            <td>010-0000-0000</td>
+        </tr>
+        <tr>
+            <td>소나기</td>
+            <td>대전</td>
+            <td>010-1111-1111</td>
+        </tr>
+    </table>
+    <table id="tab3" border="1">
+        <tr>
+            <th>이름</th>
+            <th>주소</th>
+            <th>전화번호</th>
+            <th>이메일</th>
+        </tr>
+        <tr>
+            <td>무지개</td>
+            <td>서울</td>
+            <td>010-1234-5678</td>
+            <td>aaa@abc.kr</td>
+        </tr>
+        <tr>
+            <td>아지랑이</td>
+            <td>부산</td>
+            <td>010-0000-0000</td>
+            <td>bbb@abc.kr</td>
+        </tr>
+        <tr>
+            <td>소나기</td>
+            <td>대전</td>
+            <td>010-1111-1111</td>
+            <td>vvv@abc.kr</td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/msStyle.css">
+    <style>
+        img{
+            width: 100px;
+            height: 100px;
+        }
+        img:hover{
+            width: 150px;
+            height: 150px;
+        }
+        img[title]{
+            border: 3px solid red;
+        }
+        img[title="일러스트"]{
+            border: 10px outset orange;
+        }
+        img[alt="탑건"]{
+            border: 10px inset purple;
+        }
+        p{
+            width: 200px;
+            height: 200px;
+            float: left;
+            border: 5px solid;
+            margin-left: 20px;
+        }
+        p[id=p3]{
+            background-color: rgb(250, 124, 189);
+        }
+        #p4{
+            background-color: rgb(250, 124, 189,0.5);
+        }
+        pre#pr2{
+            clear: both;
+        }
+        span{
+            color: orange;
+            font-weight: bold;
+        }
+    </style>
+    <script type="text/javascript">
+        function changeColor(pobj){
+            //랜덤발생 0~255
+            a=parseInt(Math.random()*255);
+            b=parseInt(Math.random()*255);
+            c=parseInt(Math.random()*255);
+            console.log(a,b,c);
+            pobj.style.backgroundColor='rgb('+a+','+b+','+c+')';
+        }
+    </script>
+</head>
+<body>
+    <img title="img1" src="../images/Anne-Marie(앤마리)-2002.jpg" alt="앤마리">
+    <img src="../images/아메리카노.jpg" alt="아메리카노">
+    <img src="../images/탑건.jpg" alt="탑건">
+    <img title="일러스트" src="../images/어쩌다보니_최종.jpg" alt="일러">
+
+    <pre>
+        p태그를 클릭하면 랜덤으로 배경색을 변경
+        parseInt(Math.random)*255
+        &lt;p id="p1" onclick="changeColor(<span>this</span>)">&lt;/p>
+
+        function changeColor(pobj){
+            //랜덤발생 0~255
+            a=parseInt(Math.random()*255);
+            b=parseInt(Math.random()*255);
+            c=parseInt(Math.random()*255);
+            console.log(a,b,c);
+            pobj.style.backgroundColor='rgb('+a+','+b+','+c+')';
+        }
+    </pre>
+    <p id="p1" onclick="changeColor(this)"></p>
+    <p id="p2" onclick="changeColor(this)"></p>
+
+    <pre id="pr2">
+       rgb(250,124,189)
+       rgb(250,124,189,0.5)
+    </pre>
+    <p id="p3"></p>
+    <p id="p4"></p>
+</body>
+</html>

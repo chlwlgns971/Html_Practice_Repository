@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/msStyle.css">
+    <style>
+        div{
+            margin: 50px;
+            border: 3px solid blue;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+        a{
+            border: 3px solid red;
+            margin: 20px;
+            letter-spacing: 10px; /*글자와 글자간의 간격*/
+        }
+        a:link{ /*클릭전 링크 색*/
+            color: red;
+            text-decoration: none; /*밑줄 없애기*/
+        }
+        a:visited{ /*클릭한 후의 링크 색*/
+            color: green;
+        }
+        a:hover{ /*마우스 가져다 댔을 때의 css*/
+            font-size: 1.2em;
+            text-decoration: underline; /*밑 줄 만들기*/
+            background-color: silver;
+        }
+        a:active{
+            color: blue;
+        }
+        p{
+            padding-left: 50px;
+            /* margin-left: 50px; */
+            border: 3px solid pink;
+        }
+        p:hover{
+            color: red;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <pre>
+        의사클래스
+        상태를 나타내는 클래스
+        구조를 나타내느 클래스
+        선택자: 클래스
+        a:link
+        a:visited
+        a:hover
+        a:active
+
+    </pre>
+    <div>
+        <a href="http://naver.com" target="_blank">네이버</a>
+        <a href="http://daum.net" target="_blank">다음</a>
+        <a href="http://nate.com" target="_blank">네이트</a>
+        <a href="http://w3schools.com" target="_blank">w3schools</a>
+    </div>
+    <pre>
+        a:hover{ /*마우스 가져다 댔을 때의 css*/
+            font-size: 1.2em;
+            text-decoration: underline; /*밑 줄 만들기*/
+            background-color: silver;
+        }
+        a:active{
+            color: blue;
+    </pre>
+    <p>안녕하세요</p>
+    <p>지금은 오후 html시간입니다.</p>
+    <p>지금은 p태그 css연습중입니다.</p>
+    
+</body>
+</html>
