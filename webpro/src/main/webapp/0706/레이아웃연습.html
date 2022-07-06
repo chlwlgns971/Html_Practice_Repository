@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            border: 3px solid blue;
+        }
+        header, nav, section, footer{
+            box-sizing: border-box;
+            border-radius: 20px;
+        }
+        header,footer{
+            width: 100%;
+            height: 100px;
+            text-align: center;
+        }
+        header{
+            background-color: yellow;
+            padding-top: 1px;
+        }
+        nav{
+            background-color: lightcoral;
+            width: calc(29% - 1px);
+            height: 500px;
+            float: left;
+        }
+        section{
+            background-color: lightblue;
+            width: 70%;
+            height: 500px;
+            float: right;
+        }
+        footer{
+            height: 80px;
+            clear: both;
+            background-color: plum;
+            padding-top: 10px;
+        }
+        article{
+            width: 90%;
+            height: 45%;
+            margin: 12px auto;
+            border: 3px solid black;
+            border-radius: 20px;
+        }
+        img{
+            width: 90%;
+            height: 200px;
+            margin: 10px;
+        }
+        #fp{
+            margin-top: 20px;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        h1{
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>My Blog Page</h1>
+            <p>시멘틱 태그로 만들어진 페이지입니다.</p>
+        </div>
+    </header>
+    <nav>
+        <h2>Links</h2>
+        <ul>
+            <li><a href="https://www.w3schools.com/">w3schools</a></li>
+            <li><a href="https://www.naver.com">Naver</a></li>
+            <li><a href="https://www.Daum.net">Daum</a></li>
+        </ul>
+        <img src="../images/어쩌다보니_최종.jpg">
+        <p>일러스트</p>
+    </nav>
+    <section>
+        <article>
+            <h3>Semantic Tags</h3>
+            <p>
+                시멘틱 요소(Semantic elements)들은 브라우저에게 요쇼의 의미나 목적을 명확하게 알려주는 요소이다.
+                레이아웃을 만들 때 쓰는 것. 의미가 있는 요소라면 div보다는 시멘틱 태그를 사용해준다.
+            </p>
+        </article>
+        <article>
+            <h3>div와 span</h3>
+            <p>
+                div은 'divide'의 약자로서 페이지를 논리적인 섹션으로 분리하는데 사용되는 태그이다.
+                span요소는 인라인 요소로서 텍스트를 위한 컨테이너로 사용할 수 있다.
+            </p>
+        </article>
+    </section>
+    <footer>
+        <p id="fp">Copyright (c)2019 Hong</p>
+    </footer>
+</body>
+</html>
