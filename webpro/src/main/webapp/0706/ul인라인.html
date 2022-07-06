@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul, li, a{
+            /* border: 1px solid blue; */
+        }
+        .menubar{
+            border-top: 3px solid red;
+            border-bottom: 3px solid red;
+            margin: 5px;
+            padding: 5px;
+        }
+        .menubar li{
+            border-color: green;
+            margin: 5px;
+            padding: 5px 0px;
+            width: 18%;
+            display: inline-block;
+            text-align: center;
+            letter-spacing: 4px;
+            /* float: left; */
+        }
+        /*<a>가 인라인 요소라 margin이 적용되지 않는다.*/
+        .menubar a{
+            /* border-color: pink; */
+            letter-spacing: 15px;
+            font-size: 1.3em;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#">홈으로</a></li>
+        <li><a href="#">회사 소개</a></li>
+        <li><a href="#">제품소개</a></li>
+        <li><a href="#">질문과 대답</a></li>
+        <li><a href="#">연락처</a></li>
+    </ul>
+    <br>
+    <ul class="menubar">
+        <li><a href="#">홈으로</a></li>
+        <li><a href="#">회사 소개</a></li>
+        <li><a href="#">제품소개</a></li>
+        <li><a href="#">질문과 대답</a></li>
+        <li><a href="#">연락처</a></li>
+    </ul>
+</body>
+</html>
