@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header, nav, section, footer{
+            /* border: 3px solid black; */
+            box-sizing: border-box;
+        }
+        header, footer{
+            width: 100%;
+        }
+        header{
+            height: 80px;
+            padding-top: 5px;
+        }
+        header img{
+            margin-left: 42%;
+            margin-top: 15px;
+            width: 50px;
+            height: 50px;
+            float: left;
+            /* border: 3px solid red; */
+        }
+        header h1{
+            margin-left: 42%;
+            width: 260px;
+            color: black;
+            text-align: center;
+            margin-bottom: 30px;
+            /* border: 3px solid red; */
+        }
+        nav{
+            height: 40px;
+            background-color: black;
+            padding-top: 8px;
+        }
+        nav a{
+            display: inline-block;
+            width: 19%;
+            text-align: center;
+            text-decoration: none;
+            color: rgb(200, 200, 200);
+        }
+        nav a:hover{
+            color: white;
+        }
+        section{
+            height: 1000px;
+            /* border: 3px solid red; */
+        }
+        #sec1{
+            float: left;
+            width: calc(20% - 1px);
+        }
+        #sec1 h3{
+            margin-left: 5%;
+            font-size: 2.0em;
+            font-weight: bold;
+        }
+        #sec1 article{
+            /* border: 3px solid black; */
+            height: 95%;
+        }
+        #sec1 div{
+            width: 85%;
+            height: 90%;
+            margin-left: 10%;
+            margin-top: 20%;
+        }
+        #sec2{
+            float: left;
+            width: calc(60% - 1px);
+        }
+        #sec2 article{
+            /* border: 3px solid black; */
+            width: 45%;
+            height: 30%;
+            margin: 5px auto;
+        }
+        #sec2 #sec2a{
+            width: 95%;
+            height: 37%;
+            border-radius: 0%;
+        }
+        #sec2 img{
+            width: 100%;
+            height: 100%;
+        }
+        #sec2 #sec2b{
+            float: left;
+            margin-top: 5px;
+            margin-left: 2%;
+            background-image: url(../images/아이폰배너2.jpg);
+            background-size: 100%;
+        }
+        #sec2 #sec2c{
+            float: right;
+            margin-top: 5px;
+            margin-right: 2%;
+            background-image: url(../images/애플워치배너.jpg);
+            background-size: 100%;
+        }
+        #sec2 #sec2d{
+            float: left;
+            margin-top: 5px;
+            margin-left: 2%;
+            background-image: url(../images/M2칩.png);
+            background-size: 100%;
+        }
+        #sec2 #sec2e{
+            float: right;
+            margin-top: 5px;
+            margin-right: 2%;
+            background-image: url(../images/아이패드배너.jpg);
+            background-size: 100%;
+        }
+        #sec3{
+            float: right;
+            width: calc(20% - 1px);
+        }
+        #sec3 form{
+            margin-top: 20%;
+            margin-left: 20%;
+        }
+        #sec3 img{
+            width: 40px;
+            height: 40px;
+            float: left;
+        }
+        #sec3 article{
+            /* border: 3px solid black; */
+            width: 90%;
+            height: 90%;
+            margin-top: 10%;
+        }
+        footer{
+            clear: both;
+            height: 50px;
+            background-color: black;
+            padding-top: 3px;
+            padding-left: 15px;
+        }
+        footer p{
+            color: rgb(200, 200, 200);
+            font-size: 12px;
+            float: left;
+        }
+        footer img{
+            width: 40px;
+            height: 40px;
+        }
+        ul{
+            /* border: 3px solid blue; */
+            list-style: none;
+            width: 100%;
+            height: 80%;
+            margin-top: 10%;
+        }
+        li{
+            font-size: 2.0em;
+            margin: 20px;
+        }
+        li a{
+            text-decoration: none;
+            color: black;
+        }
+        li a:hover{
+            font-weight: bold;
+            background-color: rgb(230, 230, 230);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="../images/애플마크.jpg">
+        <h1>APPLE SHOP</h1>
+    </header>
+    <nav>
+        <a href="">Home</a>
+        <a href="">Shopping About</a>
+        <a href="">News</a>
+        <a href="">My Account</a>
+        <a href="">Contracts</a>
+    </nav>
+    <section id="sec1">
+        <article>
+            <div>
+                <h3>Category</h3>
+                <ul>
+                    <li><a href="">IPhone</a></li>
+                    <li><a href="">Ipad</a></li>
+                    <li><a href="">Mac</a></li>
+                    <li><a href="">AirPod</a></li>
+                    <li><a href="">Accessories</a></li>
+                </ul>
+            </div>
+        </article>
+    </section>
+    <section id="sec2">
+        <article id="sec2a"><img src="../images/아이폰배너.jpg"></article>
+        <article id="sec2b"></article>
+        <article id="sec2c"></article>
+        <article id="sec2d"></article>
+        <article id="sec2e"></article>
+    </section>
+    <section id="sec3">
+        <article>
+            <form name="login" action="" method="post">
+                <img src="../images/애플마크.jpg">
+                <h3>Login</h3>
+                <label>id</label><br>
+                <input type="text"><br>
+                <label>password</label><br>
+                <input type="password"><br>
+                <button type="submit">login</button>
+            </form>
+        </article>
+    </section>
+    <footer>
+        <p>Copyright (c)2022 Choi JiHoon</p>
+        <a href="https://github.com/chlwlgns971?tab=repositories" target="_blank"><img src="../images/깃허브아이콘.png"></a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/outScripts.js"></script>
+    <style>
+        div{
+            width: 400px;
+            height: 100px;
+            border: 3px dotted red;
+            margin: 50px;
+            padding: 20px;
+        }
+    </style>
+<script>
+    var now=new Date();
+    var today=now.toLocaleString();
+    var todate=now.toLocaleDateString();
+    var totime=now.toLocaleTimeString();
+
+    //출력->id가 d1인 div요소에 html요소를 검색 접근
+    window.onload=function(){
+        var hdiv=document.getElementById('d1');
+        hdiv.innerText=today;
+
+        var str="";
+        str+=" 한국 표준시:" +now+"<br>";
+        str+=" 날짜와 시간: "+today+"<br>";
+        str+=" 날짜: "+todate+"<br>";
+        str+=" 시간: "+totime+"<br>";
+        hdiv.innerHTML=str;
+    }
+
+    function proc(){
+        alert("Hello. 다시 만날 수 있을까")
+    }
+</script>
+</head>
+<body>
+    <div id="d1"></div>
+    <button type="button" onclick="alert('Hello')">확인</button>
+    <button type="button" onclick="proc()">확인</button>
+    <button type="button" onclick="proc2()">확인</button>
+</body>
+</html>

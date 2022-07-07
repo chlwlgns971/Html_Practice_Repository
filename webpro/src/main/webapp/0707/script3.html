@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function proc3(){
+            var nums="";
+            var a=10;
+            for(var i=0; i<=10; i++){
+                nums+=i+"&nbsp;&nbsp;";
+            }
+            a+=100;
+
+            var str="";
+            str+= "a= "+a+"<br>";
+            str+="nums= "+nums+"<br>";
+            str+="i= "+i+"<br>";
+
+            //html요소 div를 검색
+            var out=document.getElementsByTagName('div');
+
+            //str출력
+            out[0].innerHTML=str;
+    }
+    </script>
+    <style>
+        div{
+            width: 480px;
+            height: 300px;
+            border: 2px dotted red;
+            margin: 20px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<pre>
+    변수선언
+    var : 선언된 함수 영역 내에서 사용가능하다. 함수가 종료될 때까지 사용가능
+    let : 블럭영역. 선언된 블럭이 종료되면 변수의 사용도 종료된다.
+    const : 변하지 않는 값을 지정(ex. const pi=3.14 -> 중간에 값을 변경할 수 없다.)
+
+    지역변수 : 변수가 선언된 함수 내에서만 사용 가능
+    전역변수 : 변수가 선언된 함수 뿐만 아니라 다른 함수에서도 사용가능
+</pre>
+    <button onclick="proc3()">확인</button>
+    <br><br>
+    <div>
+
+    </div>
+</body>
+</html>
