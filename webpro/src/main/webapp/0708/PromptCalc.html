@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/msStyle.css">
+    <style>
+        input[type=button]{
+            background-color: blue;
+            color: white;
+            width: 80px;
+            height: 30px;
+        }
+        div{
+            background-color: #f1a9ff;
+            border-top: 1px solid gray;
+            border-bottom: 1px solid gray;
+            height: 50px;
+            padding: 20px;
+        }
+    </style>
+    <script>
+        calc=()=>{
+            let su1=parseInt(prompt("첫번째 숫자 입력:"))
+            let su2=parseInt(prompt("두번째 숫자 입력:"))
+            let op=prompt("연산자입력:")
+
+            //op를 비교
+            let res=0;
+            switch(op){
+                case "+":
+                    res=su1+su2
+                    break;
+                case "-":
+                    res=su1-su2
+                    break;
+                case "*":
+                    res=su1*su2
+                    break;
+                case "/":
+                    res=su1/su2
+                    break;
+            }
+            //출력- html요소 div를 검색
+            let str=`${su1} ${op} ${su2} = ${res}`
+            out=document.querySelector('div')
+            out.innerHTML=res
+        }
+    </script>
+</head>
+<body>
+    <pre>
+        버튼을 클릭하면 두 수와 연산자를 입력하여
+        연산자에 따라 계산을 한다.
+
+        *함수 선언방법
+        function 함수이름(){}
+
+        함수이름 = function(){}
+
+        //람다함수 -es6
+        calc=()=>{}
+    </pre>
+    <input type="button" value="확인" onclick="calc();">
+    <br><br>
+    <div></div>
+</body>
+</html>
