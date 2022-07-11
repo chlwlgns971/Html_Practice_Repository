@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        /*
+        점수를 입력받아 학점을 출력하시오.(switch문을 이용)
+        점수가 90 ~ 100이면 ‘A’
+        점수가 80 ~ 89이면 ‘B’
+        점수가 70 ~ 79이면 ‘C’
+        점수가 60 ~ 69이면 ‘D’
+        점수가 0 ~ 59이면 ‘F’
+        출력은 document.write()를 이용
+        */
+        function calc(){
+            x=parseInt(prompt("점수 입력"));
+            number = parseInt(x/10);
+            res = "";
+            
+            switch(number){
+                case 10 : 
+                    res = "A"
+                    break;              
+                    
+                case 9 : 
+                    res = "A"
+                    break;
+                
+                case 8 :
+                    res = "B"
+                        break;
+                case 7 :
+                    res = "c"
+                        break;
+                case 6 :
+                    res = "D"
+                        break;
+                default :
+                    res = "F"
+                        break;
+            }
+            out=document.querySelector('div')
+            out.innerHTML = res;
+        }
+    </script>
+    <style>
+        #res{
+            border: 2px solid black;
+            width: 200px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <form>      
+        <input id="su" type="button" value="점수입력" onclick="calc();">
+        <br>
+        <label>학점</label>         
+        <div id="res"></div>
+
+    </form>
+</body>
+</html>
