@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열(전역변수활용)</title>
+<link rel ="stylesheet" href = "../css/mystyle.css">
+<script type="text/javascript">
+   proc1 = () =>{
+      fruit = ["바나나","사과","오렌지","파인애플","복숭아"];
+      
+      str ="";
+      
+      //자바에서는 이렇게 배열을 직접 찍으면 주소가 찍히지만, script에서는 값이 찍힘
+      //document.getElementById("result1").innerHTML =  fruit;
+      
+      //값을 한개씩 찍어보자
+      print("result1");
+   }
+   
+   function print(out){
+      str = "";      
+      
+      for(i=0; i<fruit.length; i++){
+         str += fruit[i] + " ";
+      }
+      document.getElementById(out).innerHTML =  str;
+      //document.querySelector(out)
+   }
+
+   function proc2(){
+      fruit = new Array("자두","참외","수박","귤","배");
+      print("result2");
+   }
+   
+   function proc3(){
+      fruit = new Array();
+      
+         fruit[0] = "파인애플";
+         fruit[1] = "망고";
+         fruit[2] = "딸기";
+      
+      
+      print("result3");
+   }
+   
+</script>
+</head>
+<body>
+
+<div class = "box">
+   <h3>배열 
+      <br>
+      fruit = ["바나나","사과","오렌지","파인애플","복숭아"]
+      </h3>
+   <input type="button" value="확인" onclick="proc1()">
+   <div id="result1"></div>   
+</div>
+
+<div class = "box">
+   <h3>배열 
+      <br>
+      fruit = new Array("자두","참외","수박","귤","배") --생성자를 이용해서 값을 넣어줌
+      </h3>
+   <input type="button" value="확인" onclick="proc2()">
+   <div id="result2"></div>   
+</div>
+
+<div class = "box">
+   <h3>배열 <br>
+      fruit = new Array();<br>
+      fruit[0] = "파인애플";<br>
+      fruit[1] = "망고";<br>
+      fruit[2] = "딸기";<br>
+      </h3>
+   <input type="button" value="확인" onclick="proc3()">
+   <div id="result3"></div>   
+</div>
+
+</body>
+</html>
