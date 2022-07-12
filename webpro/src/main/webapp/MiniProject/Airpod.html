@@ -7,6 +7,55 @@
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="../css/main.css">
 </head>
+<style>
+    #podLi{
+        text-decoration: underline;
+        font-weight: bold;
+    }
+    section{
+        height: 1000px;
+    }
+    #sec2 div{
+        margin-top: 10%;
+        border-bottom: 2px solid gray;
+        height: 110px;
+        width: 90%;
+        margin-left: 5%;
+    }
+    #sec2 div img{
+        width: 150px;
+        height: 100px;
+        float: left;
+    }
+    #sec2 div h2{
+        padding-top: 40px;
+    }
+    #sec2 #prod1, #sec2 #prod2, #sec2 #prod3{
+        width: 30%;
+        height: 30%;
+        float: left;
+        margin-top: 5%;
+        margin-left: 2%;
+        border: 2px solid lightgray;
+        border-radius: 10%
+    }
+    #sec2 .btn{
+        display: inline-block;
+        margin-left: 37%;
+        padding: 10px 20px 10px 20px;
+        text-decoration: none;
+        border-radius: 10px;
+        color: white;
+        background-color: #1f75d9;
+    }
+    #sec2 #line{
+        clear: both;
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 70%;
+        border-bottom: 2px solid gray;
+    }
+</style>
 <body>
     <header>
         <img src="../images/애플마크.jpg">
@@ -34,13 +83,23 @@
         </article>
     </section>
     <section id="sec2">
-        <!-- <article id="sec2a"><img src="../images/아이폰배너.jpg"></article> -->
-        <article id="sec2a"><img src="../images/giphy.gif"></article>
-        <article id="sec2b"></article>
-        <article id="sec2c"></article>
-        <article id="sec2d"></article>
-        <article id="sec2e"></article>
-        <article id="sec2f"></article>
+        <div>
+            <img src="../images/AirPod.png">
+            <h2>AirPod</h2>
+        </div>
+        <article id="prod1">
+            <img src="../images/prod/pod1.jpg">
+            <a class="btn" href="https://www.apple.com/shop/product/MV7N2AM/A/airpods-with-charging-case">BUY</a>
+        </article>
+        <article id="prod2">
+            <img src="../images/prod/pod2.jpg">
+            <a class="btn" href="https://www.apple.com/shop/product/MME73AM/A/airpods-3rd-generation">BUY</a>
+        </article>
+        <article id="prod3">
+            <img src="../images/prod/pod3.jpg">
+            <a class="btn" href="https://www.apple.com/shop/product/MLWK3AM/A/airpods-pro">BUY</a>
+        </article>
+        <p id="line"></p>
     </section>
     <section id="sec3">
         <article>

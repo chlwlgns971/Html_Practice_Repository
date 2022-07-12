@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+<style>
+    #accLi{
+        text-decoration: underline;
+        font-weight: bold;
+    }
+    section{
+        height: 1000px;
+    }
+    #sec2 div{
+        margin-top: 10%;
+        border-bottom: 2px solid gray;
+        height: 110px;
+        width: 90%;
+        margin-left: 5%;
+    }
+    #sec2 div img{
+        width: 150px;
+        height: 100px;
+        float: left;
+    }
+    #sec2 div h2{
+        padding-top: 40px;
+    }
+    #sec2 #prod1, #sec2 #prod2, #sec2 #prod3{
+        width: 30%;
+        height: 30%;
+        float: left;
+        margin-top: 5%;
+        margin-left: 2%;
+        border: 2px solid lightgray;
+        border-radius: 10%
+    }
+    #sec2 .btn{
+        display: inline-block;
+        margin-left: 37%;
+        padding: 10px 20px 10px 20px;
+        text-decoration: none;
+        border-radius: 10px;
+        color: white;
+        background-color: #1f75d9;
+    }
+    #sec2 #line{
+        clear: both;
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 70%;
+        border-bottom: 2px solid gray;
+    }
+</style>
+<body>
+    <header>
+        <img src="../images/애플마크.jpg">
+        <h1>APPLE SHOP</h1>
+    </header>
+    <nav>
+        <a href="main.html">Home</a>
+        <a href="">Shopping About</a>
+        <a href="">News</a>
+        <a href="">My Account</a>
+        <a href="https://support.apple.com/contact">Contracts</a>
+    </nav>
+    <section id="sec1">
+        <article>
+            <div>
+                <h3>Category</h3>
+                <ul>
+                    <li><a href="../MiniProject/Iphone.html">IPhone</a></li>
+                    <li><a href="../MiniProject/Ipad.html">IPad</a></li>
+                    <li><a href="../MiniProject/Mac.html">Mac</a></li>
+                    <li><a href="../MiniProject/Airpod.html">AirPod</a></li>
+                    <li><a href="../MiniProject/Accessories.html">Accessories</a></li>
+                </ul>
+            </div>
+        </article>
+    </section>
+    <section id="sec2">
+        <div>
+            <img src="../images/Accessories.png">
+            <h2>Accessories</h2>
+        </div>
+        <article id="prod1">
+            <img src="../images/prod/acc1.jpg">
+            <a class="btn" href="https://www.apple.com/shop/buy-airtag/airtag/1-pack?fnode=455995a8b54bd92a8aafc4db2ae3619ac93121b6831383b926cf9fc95246b722761d9d8b3ac7d17edd118b402219440755e63c711dcd854e549d6307df796dcae256ed73c422c300e8310200ad3650dbffc9fe7d4918d886906e4e369b26083b">BUY</a>
+        </article>
+        <article id="prod2">
+            <img src="../images/prod/acc2.jpg">
+            <a class="btn" href="https://www.apple.com/shop/product/MMMR3LL/A/magic-keyboard-with-touch-id-and-numeric-keypad-for-mac-models-with-apple-silicon-us-english-black-keys?fnode=455995a8b54bd92a8aafc4db2ae3619ac93121b6831383b926cf9fc95246b722761d9d8b3ac7d17edd118b402219440755e63c711dcd854e549d6307df796dcae256ed73c422c300e8310200ad3650dbffc9fe7d4918d886906e4e369b26083b">BUY</a>
+        </article>
+        <article id="prod3">
+            <img src="../images/prod/acc3.jpg">
+            <a class="btn" href="https://www.apple.com/shop/product/MN653ZM/A/iphone-13-pro-silicone-case-with-magsafe-blue-fog?fnode=455995a8b54bd92a8aafc4db2ae3619ac93121b6831383b926cf9fc95246b722761d9d8b3ac7d17edd118b402219440755e63c711dcd854e549d6307df796dcae256ed73c422c300e8310200ad3650dbffc9fe7d4918d886906e4e369b26083b">BUY</a>
+        </article>
+        <p id="line"></p>
+    </section>
+    <section id="sec3">
+        <article>
+            <form name="login" action="" method="post">
+                <img src="../images/애플마크.jpg">
+                <h3>Login</h3>
+                <label>id</label><br>
+                <input type="text"><br>
+                <label>password</label><br>
+                <input type="password"><br>
+                <button type="submit">login</button>
+            </form>
+        </article>
+    </section>
+    <footer>
+        <p>Copyright (c)2022 Choi JiHoon</p>
+        <a href="https://github.com/chlwlgns971?tab=repositories" target="_blank"><img src="../images/깃허브아이콘.png"></a>
+    </footer>
+</body>
+</html>
