@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="${encoding}">
+    <title>Insert title here</title>
+    <link rel = "stylesheet" href = "../css/msstyle.css">
+    <script>
+        function proc1(){
+            while(true){
+                //수 입력
+                num=parseInt(prompt("출력할 구구단 숫자를 입력해주세요"))
+                //구구단 만들기
+                str=""
+                for(i=1; i<10; i++){
+                    str+=num+"*"+i+" = "+num*i+"<br>"
+                }
+                //출력
+                document.getElementById('result1').innerHTML+=str
+                //계속-yes or no
+                cont=confirm("계속 하시겠습니까?")
+                if(cont==true) continue
+                else break
+            }
+        }
+    </script>
+</head>
+<body>
+${cursor}
+    <div class = "box">
+        <h3>버튼을 클릭하면 proc1()함수를 호출<br>수를 입력해서 구구단을 출력한다.<br>
+            구구단 출력후 계속 여부를 입력하여 진행한다.</h3>
+        <input type="button" value="확인" onclick="proc1()">
+        <div id="result1"></div>  
+    </div>
+</body>
+</html>

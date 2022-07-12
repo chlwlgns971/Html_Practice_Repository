@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/msStyle.css">
+    <script>
+        function proc(op){
+            //입력한 값을 가져오기
+            xvalue = parseInt(document.querySelector('#x3').value);
+            yvalue = parseInt(document.querySelector('#y3').value);
+            
+            //op의 값을 비교
+            switch(op){
+            case "+" :
+                res = add();
+                break;
+            case "-" :
+                res = sub();
+                break;
+            case "*" :
+                res = multi();
+                break;
+            case "/" :
+                res = divide();
+                break;
+            }   
+            //출력장소를 검색->sum3, result1, sp1, sp2, sp3
+            document.querySelector('#sum3').value = res;
+            document.getElementById('sp1').innerHTML=xvalue;
+            document.getElementById('sp2').innerHTML=yvalue;
+            document.getElementById('sp3').innerHTML=res;
+        }
+
+        function add(){
+        xy=xvalue + yvalue;
+        return xy;
+        }
+
+        function sub(){
+        xy=xvalue - yvalue;
+        return xy;
+        }
+
+        function multi(){
+        xy=xvalue * yvalue;
+        return xy;
+        }
+
+        function divide(){
+        xy=xvalue / yvalue;
+        return xy;
+        }
+        function calc(a){
+            //입력한 값을 가져오기 
+            xvalue = parseInt(document.getElementById("x").value);
+            yvalue = parseInt(document.getElementById("y").value);
+            
+            //출력 검색
+            sum = document.getElementById("sum");
+            
+            //a의 값을 비교
+            switch(a){
+            case "+" :
+                sum.value =  add();
+                break;
+            case "-" :
+                sum.value =  sub();
+                break;
+            case "*" :
+                sum.value =  multi();
+                break;
+            case "/" :
+                sum.value =  divide();
+                break;
+            } 
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <h3></h3>
+        <form>
+            <label>첫번째 정수</label>
+            <input id="x3"><br>
+
+            <label>두번째 정수</label>
+            <input id="y3"><br>
+
+            <label>결과</label>
+            <input id="sum3"><br>
+
+            <input type="button" value="더하기" onclick="proc('+');">
+            <input type="button" value="빼기" onclick="proc('-');">
+            <input type="button" value="곱하기" onclick="proc('*');">
+            <input type="button" value="나누기" onclick="proc('/');">
+        </form> 
+        <div id="reuslt1"></div>
+        <p>첫번째 값 :<span id="sp1"></span> </p>
+        <p>두번째 값 :<span id="sp2"></span> </p>
+        <p>결과 :<span id="sp3"></span> </p>   
+    </div>
+    <div class="box">
+        <h3></h3>
+        <form>
+            <label>첫번째 정수</label>
+            <input id="x"><br>
+
+            <label>두번째 정수</label>
+            <input id="y"><br>
+
+            <label>결과</label>
+            <input id="sum"><br>
+
+            <input type="button" value="더하기" onclick="calc('+');">
+            <input type="button" value="빼기" onclick="calc('-');">
+            <input type="button" value="곱하기" onclick="calc('*');">
+            <input type="button" value="나누기" onclick="calc('/');">
+        </form> 
+    </div>
+</body>
+</html>

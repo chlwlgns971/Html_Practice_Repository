@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/msStyle.css">
+    <script>
+        function proc1(){
+            a=""
+            for(i=0; i<5; i++){
+                a+=" "+parseInt(Math.random()*10+1)
+            }
+            document.getElementById('result1').innerHTML+=a+"<br>"
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <h3>버튼을 클릭하면 랜덤숫자 5개를 발생</h3>
+        <input type="button" value="확인" onclick="proc1()">
+        <div id="result1"></div>
+    </div>
+</body>
+</html>
