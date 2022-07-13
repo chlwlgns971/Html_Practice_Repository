@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href = "../css/msstyle.css">
+    <script>
+        function Rect(garo, sero){
+            this.garo=garo; 
+            this.sero=sero;
+
+            this.getArea=function(){
+                return this.garo*this.sero;
+            }
+            this.getCircum=function(){
+                return (this.garo+this.sero)*2;
+            }
+        }
+        function proc1(){
+            p1= new Rect(4,5);
+            print(p1,'result1');
+
+            //이름 속성을 추가
+            p1.name="네모"
+            print(p1,'result1');
+        }
+        function print(p,out){
+            str="가로 = "+p.garo+"<br>";
+            str+="세로 = "+p.sero+"<br>";
+            str+="이름 = "+p.name+"<br>";
+            str+="넓이 = "+p.getArea()+"<br>";
+            str+="둘레 = "+p.getCircum()+"<br>"; 
+            //str=`가로 = ${p.garo} <br>`;
+            document.getElementById(out).innerHTML=str;
+        }
+        function proc2(){
+            //입력
+            garo=parseInt(prompt("가로길이를 입력해주세요"));
+            sero=parseInt(prompt("세로길이를 입력해주세요"));
+
+            //Rect의 객체 생성
+            p2=new Rect(garo, sero);
+
+            //rect객체에 이름을 추가
+            rect.name = "사각형";
+
+            print(p2,'result2');
+        }
+    </script>
+</head>
+<body>
+    <div class = "box">
+        <h3>버튼을 클릭하면 proc1() 함수호출 객체 정보를 출력</h3>
+        <input type="button" value="확인" onclick="proc1()">
+        <div id="result1"></div>  
+    </div>
+    <div class = "box">
+        <h3>버튼을 클릭하면 proc2() 함수호출 객체 정보를 출력</h3>
+        <input type="button" value="확인" onclick="proc2()">
+        <div id="result2"></div>  
+    </div>
+</body>
+</html>
