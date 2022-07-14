@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/msStyle.css">
+    <script>
+        function proc1(){
+            arr=new Array();
+            while(true){
+                name=prompt("이름을 입력하세요.");
+                if(name==""||name=='null') break;
+                else{
+                    arr.push(name);
+                }
+            }
+            document.getElementById('result1').innerHTML=arr;
+        }
+        function proc2(){
+            rr=new Array();
+            let i=0;
+            while(true){
+                a=parseInt(prompt((i+1)+"번째 입력하세요."));
+
+                //중복비교
+                idx=arr.indexOf(a)
+                if(idx == -1){  
+                    arr.push(a);
+                    i++
+                }
+                if(i>=5) break;
+            }
+            document.getElementById('result2').innerHTML=arr;
+        }
+    </script>
+</head>
+<body>
+    <div class = "box">
+        <h3>사람 이름 입력받기</h3>
+        <input type="button" value="입력시작" onclick="proc1()">
+        <div id="result1"></div>    
+    </div>
+    <div class = "box">
+        <h3>서로 중복되지 않은 정수 5개를 입력받아 출력하시오</h3>
+        <input type="button" value="입력시작" onclick="proc2()">
+        <div id="result2"></div>    
+    </div>
+</body>
+</html>

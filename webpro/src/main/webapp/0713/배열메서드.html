@@ -7,7 +7,7 @@
     <title>Document</title>
     <link rel = "stylesheet" href = "../css/msstyle.css">
     <script>
-        arr1=["사과","바나나",100,"복숭아",123.456,"파인애플","사과","참외","수박","사과"]
+        arr1=["사과","바나나","복숭아","파인애플","사과","참외","수박","사과"]
         //arr2=new Array("사과","바나나","복숭아","파인애플","사과","참외","수박","사과")
 
         function proc1(){
@@ -60,13 +60,86 @@
         }
         arr2= new Array()
         function proc4(){
-            for(i=0; i<5; i++){
-                a=prompt("입력하세요")
+            // for(i=0; i<5; i++){
+            //     a=prompt("입력하세요")
 
-                //배열에 저장
-                arr2.push(a)
+            //     //배열에 저장
+            //     arr2.push(a)
+            // }
+
+            //중복을 제거해서 저장한다.
+            let i=0;
+            while(true){
+                a=prompt((i+1)+"번째 입력하세요.")
+
+                //중복비교
+                idx=arr2.indexOf(a)
+                if(idx == -1){
+                    arr2.push(a);
+                    i++
+                }
+                if(i>=5) break;
             }
             document.getElementById('result4').innerHTML=arr2
+        }
+        function proc5(){
+            str=`원래배열: ${arr1} <br>`;
+            a=arr1.pop();
+            str+=`pop후 배열: ${arr1}<br>`;
+            str+=`꺼낸 요소: ${a}<br>`;
+            
+            document.getElementById('result5').innerHTML=str;
+        }
+        function proc6(){
+            narr=arr1.slice(2,7);
+
+            str=`원래배열: ${arr1} <br>`;
+            str+=`arr.slice(2,7) 후: ${arr1}<br>`;
+            str+=`${narr}<br><br>`;
+            document.getElementById('result6').innerHTML=str;
+
+            //사과와 사과사이의 데이터
+            idx=0;
+            while(true){
+                //사과 위치 찾기
+                start=arr1.indexOf("사과",idx); 
+                end=arr1.indexOf("사과",start+1);
+                console.log(start,end);
+                if(end<0) break;
+                aa=arr1.slice(start+1,end);
+                alert(aa);
+                idx=end;
+                console.log("idx= "+idx);
+            }
+            document.getElementById('result6').innerHTML+=aa;
+        }
+        function proc7(){
+            str=`원래배열: ${arr1} <br>`;
+            //4번째 위치에서 1개를 삭제하고 키위와 자두를 삽입
+            arr1.splice(4,1,"키위","자두");
+            str+=`splice(4,1,"키위","자두")후 : ${arr1}<br>`;
+
+            //7번째 위치에서 2개 삭제
+            arr1.splice(7,2);
+            str+=`splice(7,2)후: ${arr1}<br>`;
+
+            document.getElementById('result7').innerHTML=str;
+        }
+        function proc8(){
+            str="";
+            arr1=["사과","복숭아","바나나"]
+            str+=`배열길이: ${arr1.length}<br>`;
+
+            //배열을 문자열로 변환aa는 문자열 변수
+            aa=arr1.join();
+
+            str+=`arr.join()후: ${aa.length}<br>`;
+            str+=`arr[2]: ${arr1[2]}<br>`;
+            str+=`aa[2]: ${aa[2]}<br>`;
+            document.getElementById('result8').innerHTML=str;
+        }
+        function proc9(){
+            
         }
     </script>
     <style>
@@ -90,15 +163,34 @@
         <div id="result3"></div> 
     </div>
     <div class = "box">
-        <h3>배열 요소 위치 찾기</h3>
+        <h3>배열에 저장/꺼내기</h3>
         arr=["사과","바나나","복숭아","파인애플","사과","참외","수박","사과"]<br>
         indexOf<br>
         lastIndexOf<br>
         없으면 -1을 리턴한다.<br>
         <input type="button" value="push" onclick="proc4()">
-        <input type="button" value="indexOf_여러개" onclick="proc5()">
+        <input type="button" value="pop" onclick="proc5()">
         <div id="result4"></div>    
         <div id="result5"></div> 
+    </div>
+    <div class = "box">
+        <h3>배열요소 자르기/수정</h3>
+        slice(start,end)<br>
+        사과와 사과 사이를 자른다<br>
+        splice(index, n개, a,b,c,요소)<br>
+        <input type="button" value="slice" onclick="proc6()">
+        <input type="button" value="splice" onclick="proc7()">
+        <div id="result6"></div>    
+        <div id="result7"></div> 
+    </div>
+    <div class = "box">
+        <h3>배열을 문자로</h3>
+        arr=["사과","복숭아","바나나"]<br>
+        join()<br>
+        <input type="button" value="slice" onclick="proc8()">
+        <input type="button" value="splice" onclick="proc9()">
+        <div id="result8"></div>    
+        <div id="result9"></div> 
     </div>
 </body>
 </html>
