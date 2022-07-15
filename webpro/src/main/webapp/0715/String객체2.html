@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/msStyle.css">
+    <script>
+        proc1=()=>{
+            //입력
+            code=prompt("주민등록번호를 입력하세요");
+
+            yy=code.substring(0,2);
+            mm=code.substring(2,4);
+            dd=code.substring(4,6);
+
+            gg=code.charAt(7);
+
+            //비겨
+            if(gg=="1" || gg=="3") gender = "남자";
+            if(gg=="2" || gg=="4") gender = "여자";
+
+            if(gg=="1" || gg=="2") year="1900"
+            else if(gg=="3" || gg=="4") year="2000";
+
+            year=parseInt(year)+parseInt(yy)
+
+            now=new Date();
+            curyear=now.getFullYear();
+            age=curyear-year;
+
+            str="주민번호: "+code.substring(0,8)+"*********<br>"
+            str+=`생년월일: ${year}년 ${mm}월 ${dd}일<br>`;
+            str+=`성별: ${gender}<br>`;
+            str+= `나이: ${age}<br>`;
+            document.getElementById('result1').innerHTML=str;
+        }
+    </script>
+</head>
+<body>
+    <div class = "box">
+        <h3>주민등록번호를 입력 받아 생년월일과 성별을 출력하는 프로그랭을 작성하시오<br>
+        입력은 prompt로 입력받는다.<br>
+        예)110326-4432618 ->생일: 2011년 3월 26일, 성별: 여자, 나이: 
+        </h3>
+        <input type="button" value="split" onclick="proc1()">
+        <div id="result1"></div>    
+    </div> 
+</body>
+</html>
