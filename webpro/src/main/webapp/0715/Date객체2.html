@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/msStyle.css">
+    <script>
+        today=new Date();
+        function proc1(){
+            //오늘의 날짜로 getTime()실행하기
+            todayTime=today.getTime();
+            console.log(todayTime);
+
+            //100일의 milisec구하기
+            time100=100*24*60*60*1000;
+
+            //두 개의 milisec값을 더한다.
+            newTime=todayTime+time100;
+
+            //새로운 Date객체를 생성
+            days100=new Date(newTime);
+            document.getElementById('result1').innerHTML=days100.toLocaleString();
+        }
+        function proc2(){
+            //id='pdate'인 요소를 검색하여 값을 가져온다.
+            selvalue=document.getElementById('pdate').value;
+            //selvalue의 값으로 Date객체 생성
+            selday= new Date(selvalue);
+
+            //오늘의 milisec와 selday의 milisec 
+            time=today.getTime()-selday.getTime();
+
+            //time에 millisec값을 가지고 지난 일 수를 구한다.
+            day=time/(24*60*60*1000);
+            console.log(day);
+            if(day>7) res="교환불가";
+            else res="교환가능";
+            str=`오늘: ${today.toLocaleString()}<br>`;
+            str+=`구매날짜: ${selday.toLocaleString()}<br>`;
+            str+=res;
+            document.getElementById('result2').innerHTML=str;
+        }
+    </script>
+</head>
+<body>
+    <div class = "box">
+        <h3>오늘로부터 100일 후의 날짜구하기<br>
+        경과시간구하기-getTime()<br>
+        오늘의 날짜로 getTime실행하기-millisec의 값. 100일의 millisec값 구하기-1000*60*60*24*100<br>
+        두 개의 millisec값을 더한다.-새로운 Date객체를 생성</h3>
+        <input type="button" value="계산" onclick="proc1()">
+        <div id="result1"></div>    
+    </div>
+    <div class = "box">
+        <h3>경과시간 구하기-getTime()<br>
+        선택한 날로부터 오늘까지 7일이 지났으면 교환불가
+        </h3>
+        <br>
+        <input type="date" id="pdate">
+        <input type="button" value="계산" onclick="proc2()">
+        <div id="result2"></div>    
+    </div>
+</body>
+</html>
