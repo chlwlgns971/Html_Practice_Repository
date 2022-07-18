@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/msStyle.css">
+    <script>
+        rand=parseInt(Math.random()*100+1)
+        count=0;
+        nums="";
+        function proc1(){
+            ss="";
+            //id=number인요소에 접근하여 값을 가져온다.
+            numvalue=document.getElementById('number').value;
+
+            //비교
+            nums+=numvalue+" ";
+            count=count+1;
+            if(numvalue==rand){
+                ss="정답입니다.";
+                str="랜덤:"+rand;
+                strr=str+"<br>"+nums+"<br>"+count+"<br>"+ss;
+            }
+            else if(numvalue<rand){
+                ss="더 큰 수를 입력하세요";
+                strr=ss;
+            } 
+            else if(numvalue>rand){
+                ss="더 작은 수를 입력하세요";
+                strr=ss;
+            }
+            document.getElementById('result1').innerHTML=strr;
+        }
+        function proc2(){
+            //컴퓨터가 사용하는 랜덤-배열을 생성
+            arr=["가위","바위","보"];
+
+            //랜덤발생:0~2
+            rand=parseInt(Math.random()*3);
+
+            //computer 가위바위보 입력
+            com=arr[rand];
+            //user 가위바위보 입력
+            user=prompt("원하는 가위바위보를 입력해주세요");
+
+            //비교
+            if(user=="바위"){
+                if(com=="바위") res="비겼습니다.";
+                else if(com=="가위") res="이겼습니다.";
+                else if(com=="보") res="졌습니다.";
+            }
+            else if(user=="가위"){
+                if(com=="가위") res="비겼습니다.";
+                else if(com=="보") res="이겼습니다.";
+                else if(com=="바위") res="졌습니다.";
+            }
+            else if(user=="보"){
+                if(com=="보") res="비겼습니다.";
+                else if(com=="바위") res="이겼습니다.";
+                else if(com=="가위") res="졌습니다.";
+            }
+            else res="잘못된 입력입니다.";
+            str="컴퓨터 결과: "+com+"<br>"+"게임에서 "+res;
+            document.getElementById('result2').innerHTML=str;
+        }
+        function proc3(){
+            arr=[];
+            for(i=0; i<6; i++){
+                rand=parseInt(Math.random()*45+1);
+                arr[i]=rand;
+            }
+            document.getElementById('result3').innerHTML=arr;
+        }
+    </script>
+</head>
+<body>
+    <div class = "box">
+        <h3>1~100사이의 랜덤수를 발생하고 숫자를 입력해서 랜덤수를 맞추는 프로그램
+        </h3>
+        <input type="text" id="number">
+        <input type="button" value="시작" onclick="proc1()">
+        <div id="result1"></div>    
+    </div> 
+    <div class = "box">
+        <h3>가위바위보 게임
+        </h3>
+        <input type="button" value="시작" onclick="proc2()">
+        <div id="result2"></div>    
+    </div> 
+    <div class = "box">
+        <h3>로또번호
+        </h3>
+        <input type="button" value="시작" onclick="proc3()">
+        <div id="result3"></div>    
+    </div> 
+</body>
+</html>
