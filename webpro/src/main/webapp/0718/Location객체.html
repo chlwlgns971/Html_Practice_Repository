@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href = "../css/msstyle.css">
+    <script>
+        function proc1(){
+            str="hostname = "+location.hostname+"<br>";
+            str+="pathname = "+location.pathname+"<br>";
+            str+="protocol = "+location.protocol+"<br>";
+            document.getElementById('result1').innerHTML=str;
+        }
+        function proc2(){
+            location.href="window열기.html";
+        }
+    </script>
+</head>
+<body>
+    <div class = "box">
+        <h3>Location객체</h3>
+        <input type="button" value="확인" onclick="proc1()">
+        <div id="result1"></div>
+    </div>
+    <div class = "box">
+        <h3>location.href: 페이지 이동<br>
+        자바스크립트를 통해서 페이지 이동<br>
+        onclick에서 페이지 이동을 설정할 수 있다.</h3>
+        <input type="button" value="열기" onclick="proc2()">
+        <input type="button" value="열기" onclick="location.href='timeout_interval.html'">
+        <div id="result2"></div>
+    </div>
+    <div class = "box">
+        <h3>location.href: 페이지 이동<br>
+            a태그에서 자바스크립트를 통해서 페이지 이동<br>
+            a href 페이지 이동을 설정할 수 있다.</h3>
+        <a href="" onclick="proc2()">proc3()호출</a><br>
+        <a href="#" onclick="location.href='timeout_interval.html'">setTimeout_interval</a>
+        <div id="result3"></div>
+    </div>
+</body>
+</html>
