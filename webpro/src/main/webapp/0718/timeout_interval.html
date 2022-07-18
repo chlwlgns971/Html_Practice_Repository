@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>timeout_interval</title>
+
+<link rel = "stylesheet" href = "../css/msstyle.css">
+<script type="text/javascript">
+    arr=["아이유","블랙핑크","Charlie puth","Coldplay", "Cash Cash","Anne Marie", "Dua Lipa"];
+
+   function proc1(){
+      rand=parseInt(Math.random()*arr.length);
+      str=arr[rand];
+
+      setTimeout(function(){
+        document.getElementById('result1').innerText=str;
+    },1000);
+   }
+   window.onload=function(){
+    result2=document.getElementById('result2');
+   }
+   function proc2(){
+      setInterval(function(){
+        rand=parseInt(Math.random()*arr.length);
+        str=arr[rand];
+
+        r=parseInt(Math.random()*256);
+        g=parseInt(Math.random()*256);
+        b=parseInt(Math.random()*256);
+
+        r2=parseInt(Math.random()*256).toString(16);
+        g2=parseInt(Math.random()*256).toString(16);
+        b2=parseInt(Math.random()*256).toString(16);
+
+        cr=r.toString(16);
+        cg=g.toString(16);
+        cb=b.toString(16);
+
+        size=parseInt(Math.random()*39+12);
+
+        result2.innerText=str;
+        result2.style.color='#'+cr+cg+cb;
+        result2.style.fontSize=size+"px";
+        result2.style.backgroundColor='#'+r2+g2+b2;
+      },1000);
+      
+   }
+</script>
+</head>
+<body>
+    <div class = "box">
+        <h3>setTimeout</h3>
+        <p>주어진 시간경과후에 실행하는 함수를 정의<br>
+        랜덤으로 문자를 발생해서 출력
+        
+        </p> 
+        <input type="button" value="확인" onclick="proc1()">
+        <div id="result1"></div>
+    </div>
+    <div class = "box">
+        <h3>setInterval</h3>
+        <p>주어진 시간 간격으로 매번 실행하는 함수를 정의<br>
+        랜덤으로 문자를 발생해서 출력
+        </p> 
+        <input type="button" value="확인" onclick="proc2()">
+        <div id="result2"></div>
+    </div>
+</body>
+</html>
