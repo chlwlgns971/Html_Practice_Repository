@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>dom객체2</title>
+
+<link rel = "stylesheet" href = "../css/msstyle.css">
+
+</head>
+<script type="text/javascript">
+
+    //arr =문자 배열
+    arr=["아이유","블랙핑크","Charlie puth","Coldplay", "Cash Cash","Anne Marie", "Dua Lipa"];
+    function addproc(){
+        //random발생
+        rand = parseInt(Math.random() * arr.length);
+      
+        //text 노드를 생성 - 랜덤으로 발생된 문자열
+        text = document.createTextNode(arr[rand]);
+        
+        //p태그를 생성
+        ptag = document.createElement('p');
+        
+        //p태그에 text를 자식으로 추가한다. 
+        ptag.appendChild(text);
+
+        //result1을 검색
+        result1=document.getElementById('result1');
+
+        //result1에 ptag을 자식으로 추가한다.
+        result1.appendChild(ptag);
+    }
+    function proc(){
+        //random발생
+        rand = parseInt(Math.random() * arr.length);
+      
+        //text 노드를 생성 - 랜덤으로 발생된 문자열
+        text = document.createTextNode(arr[rand]);
+        
+        //p태그를 생성
+        ptag = document.createElement('p');
+        
+        //p태그에 text를 자식으로 추가한다. 
+        ptag.appendChild(text);
+
+        //버튼생성
+        btn=document.createElement('button');
+        btn.type="button";
+        btn.setAttribute('class','btn');
+        btn.onclick=function(){
+            this.parentNode.remove();
+        }
+
+        //버튼에 '삭제'텍스트 추가
+        deltext=document.createTextNode("삭제");
+        btn.appendChild(deltext);
+        // bnt.innertext="삭제";
+
+        //ptag에 bnt를 자식으로 추가한다.
+        ptag.appendChild(btn);
+
+        //result2검색
+        result2=document.getElementById('result2');
+
+        //result2에 ptag추가
+        result2.appendChild(ptag);
+        
+    }
+    function delproc(){
+        //부모 result1을 검색
+        result1=document.getElementById('result1')
+
+        //lastChild를 선택
+        child=result1.lastChild;
+
+        //부모에서 lastChild를 삭제
+        result1.removeChild(child);
+    }
+    function start(){
+        //result2를 검색
+        result3=document.getElementById('result3');
+        result3.appendChild(result3.firstChild);
+        setInterval(function(){
+            result3.appendChild(result3.firstChild)
+        },);
+    }
+</script>
+<style>
+    img{
+        width: 100px;
+        height: 100px;
+        margin: 0px;
+    }
+</style>
+<body>
+
+
+<div class = "box">
+   <h3></h3>
+   <p></p> 
+   <input type="button" value="추가" onclick="addproc()">
+   <input type="button" value="삭제" onclick="delproc()">
+   <div id="result1"></div>
+</div>
+<div class = "box">
+    <h3></h3>
+    <p></p> 
+    <input type="button" value="추가" onclick="proc()">
+    <div id="result2"></div>
+ </div>
+ <div class = "box">
+    <h3>appendChild(child)<br>
+    기존의 img를 선택할 시에는 선택된 img가 이동된다.</h3>
+    <p></p> 
+    <input type="button" value="시작" onclick="start()">
+    <input type="button" value="종료" onclick="end()">
+    <div id="result3">
+       <img src="../images/AirPod.png" alt="">
+       <img src="../images/Ipad.png" alt=""> 
+       <img src="../images/Phone.png" alt="">
+       <img src="../images/Watch.png" alt="">
+       <img src="../images/Accessories.png" alt=""> 
+    </div>
+ </div>
+
+</body>
+</html>

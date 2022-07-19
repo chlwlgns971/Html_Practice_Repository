@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href = "../css/msstyle.css">
+    <script>
+        function proc1(){
+            list=document.getElementsByTagName('ul')[0];
+            allItems=list.getElementsByTagName('li');
+            for(i=0; i<allItems.length; i++){
+               document.getElementById('result1').innerHTML+=allItems[i].firstChild+"<br>";
+            }
+        }
+        function proc2(){
+            u2list=document.getElementById('u2');
+            lilist=u2list.getElementsByTagName('li');
+
+            for(i=0; i<lilist.length; i++){
+                str=lilist[i].firstChild.data;
+                imgtag=document.createElement('img');
+                imgtag.src="../images/"+str;
+                imgtag.alt=str;
+                lilist[i].appendChild(imgtag);
+            }
+        } 
+         //이벤트 일괄등록
+        window.onload = function(){
+      
+            iu3list = document.querySelectorAll('.iu3');
+      
+            for(i=0; i<iu3list.length; i++){
+                iu3list[i].addEventListener('click', imgProc)
+            }
+        }
+   
+         function imgProc(){
+            //this를 parameter로 주지 않아도, 함수 내에 this 가 내장되어있다.    
+            //alert(this.firstChild.data);
+      
+            str = this.firstChild.data 
+      
+            imgtag = document.createElement('img');
+            imgtag.src = "../images/"+str;
+            imgtag.alt = str;
+            
+            this.appendChild(imgtag);
+        }
+   
+</script>
+
+    </script>
+    <style>
+        img{
+            display: inline-block;
+            width : 100px;
+            height : 100px;   
+            margin : 2px;
+            border : 3px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <div class = "box">
+        <h3></h3>
+        <ul>
+            <li>List Item1</li>
+            <li>List Item2</li>
+            <li>List Item3</li>
+            <li>List Item4</li>
+            <li>List Item5</li>
+        </ul>
+        <input type="button" value="확인" onclick="proc1()">
+        <div id="result1"></div>
+     </div> 
+     <div class = "box">
+        <h3></h3>
+        <ul id="u2">
+            <li id="iu3">coffee1.jpg</li>
+            <li id="iu3">사자.jpg</li>
+            <li id="iu3">사자2.jpg</li>
+            <li id="iu3">cloud03.jpg</li>
+            <li id="iu3">circle-dot-o.png</li>
+        </ul>
+        <input type="button" value="확인" onclick="proc2()">
+        <div id="result2"></div>
+     </div> 
+     <div class = "box box3">
+        <h3></h3>
+        <p></p>
+         
+           <!-- <ul id ="u3">
+              <li onclick="proc3(this)">coffee1.jpg</li>
+              <li onclick="proc3(this)">coffee_image.jpeg</li>
+              <li onclick="proc3(this)">coffee_image02.jpg</li>
+              <li onclick="proc3(this)">cloud03.jpg</li>
+              <li onclick="proc3(this)">circle-dot-o.png</li>
+           </ul> -->
+           <ul id ="u3">
+              <li class ="iu3" >무지게1.png</li>
+              <li class ="iu3" >무지게2.png</li>
+              <li class ="iu3" >무지게3.png</li>
+              <li class ="iu3" >임영웅2.png</li>
+              <li class ="iu3" >임영웅3.png</li>         
+           </ul>
+     </div>
+     
+</body>
+</html>
