@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href = "../css/msstyle.css">
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>
+        function proc1(){
+            //전체배경색을 변경
+            $('#result1').css('background','lightblue');
+
+            //h1요소의 글자색을 파랑
+            $('h1').css('color','blue'); 
+
+            //id가 para인 요소의 글자색은 녹색
+            $('#para').css('color','green');
+
+            //class가 sample요소의 글자색은 빨강
+            $('.sample').css('color','red')
+        }
+        function proc2(e){
+            // e는 this파라미터를 받은 변수-지역변수, dom객체변수
+            //e.style.display="none";
+            $(e).css('display','none');
+        }
+        $(document).ready(function(){
+            $('#result3 h2').on('click',function(){
+                // $(this).css('display','none');
+                $(this).hide(); //jquery방식
+
+                //다 사라졌는지 검사(보이는 h2가 없는지)
+                if($('#result3 h2:visible').length<1){
+                    $('#show').show(); //$('#show').css('display','show')
+                }
+            })
+            $('#show').on('click',function(){
+                $('#result3 h2').show();
+                $(this).css('display','none');
+            })
+        })
+    </script>
+    <style>
+        #show{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h3></h3>
+        <input type="button" value="확인" onclick="proc1()">
+        <div id="result1">
+            <h1>제목입니다.</h1>
+            <h2 id="para">작은 제목입니다.</h2>
+            <h2 class="sample">샘플입니다.</h2>
+        </div>
+    </div>
+    <div class="box">
+        <h3>각 h2태그를 클릭하면 사라지는 이벤트</h3>
+        <div id="result2">
+            <h2 onclick="proc2(this)">클릭하면 사라집니다1.</h2>
+            <h2 onclick="proc2(this)">클릭하면 사라집니다2.</h2>
+            <h2 onclick="proc2(this)">클릭하면 사라집니다3.</h2>
+            <h2 onclick="proc2(this)">클릭하면 사라집니다4.</h2>
+            <h2 onclick="proc2(this)">클릭하면 사라집니다5.</h2>
+            <h2 onclick="proc2(this)">클릭하면 사라집니다6.</h2>
+            <h2 onclick="proc2(this)">클릭하면 사라집니다7.</h2>
+            <h2 onclick="proc2(this)">클릭하면 사라집니다8.</h2> 
+        </div>
+    </div>
+    <div class="box">
+        <h3>각 h2태그를 클릭하면 사라지는 이벤트<br>
+        JQuery에서 이벤트 핸들러 작성<br>
+        $('h2').on('click','function(){})</h3>
+        <input type="button" id="show" value="show" onclick="proc2()">
+        <div id="result3">
+            <h2>클릭하면 사라집니다1.</h2>
+            <h2>클릭하면 사라집니다2.</h2>
+            <h2>클릭하면 사라집니다3.</h2>
+            <h2>클릭하면 사라집니다4.</h2>
+            <h2>클릭하면 사라집니다5.</h2>
+            <h2>클릭하면 사라집니다6.</h2>
+            <h2>클릭하면 사라집니다7.</h2>
+            <h2>클릭하면 사라집니다8.</h2> 
+        </div>
+    </div>
+</body>
+</html>

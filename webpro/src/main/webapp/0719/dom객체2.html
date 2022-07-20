@@ -76,14 +76,30 @@
         //부모에서 lastChild를 삭제
         result1.removeChild(child);
     }
-    function start(){
-        //result2를 검색
-        result3=document.getElementById('result3');
-        result3.appendChild(result3.firstChild);
-        setInterval(function(){
-            result3.appendChild(result3.firstChild)
-        },);
-    }
+    function start(sb){
+        gsb=sb;
+      //result3번 검색
+      result3 = document.getElementById('result3');
+      
+      //a변수는 setInterval이 수행될 때 발생되는 id
+      a = setInterval(function(){
+         result3.appendChild(result3.firstChild);
+         console.log(a);
+      },500);
+
+      //시작버튼 사용하지 못하도록 설정한다. 
+      //종료버튼이 클릭되면 다시 나타나게 또는 사용가능하도록 설정한다.
+      //sb.style.display = "none";
+      sb.setAttribute('disabled',true);
+   }
+   function end(){
+        clearInterval(a);
+        //gsb.style.display = "inline";
+        // stb=document.getElementById('start');
+        gsb.removeAttribute('disabled');
+
+   }
+
 </script>
 <style>
     img{
@@ -112,7 +128,7 @@
     <h3>appendChild(child)<br>
     기존의 img를 선택할 시에는 선택된 img가 이동된다.</h3>
     <p></p> 
-    <input type="button" value="시작" onclick="start()">
+    <input type="button" id="start" value="시작" onclick="start(this)">
     <input type="button" value="종료" onclick="end()">
     <div id="result3">
        <img src="../images/AirPod.png" alt="">
