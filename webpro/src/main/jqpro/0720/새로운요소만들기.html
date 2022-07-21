@@ -1,28 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel = "stylesheet" href = "../css/msstyle.css">
-    <script src="../js/jquery-3.6.0.min.js"></script>
-    <script>
-        function proc1(){
-            ele=$('<p class="p1">무궁화 꽃이 피었습니다.</p>');
-            $(ele).appendTo($('#result1'))
-        }
-        function p1click() {
-            alert("hello");
-        }
+<meta charset="UTF-8">
+<title>새로운 요소 만들기</title>
 
-    </script>
+<link rel = "stylesheet" href = "../css/mystyle.css">
+<link rel = "stylesheet" href = "../css/msstyle.css">
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>
+   function proc1(){
+      ele = $('<p class="p1" onclick = "p1click()">무궁화 꽃이 피었습니다.</p> ');
+      
+      $(ele).appendTo($('#result1'));
+   }
+   
+   function p1click(){
+      alert("hello");
+      
+   }
+   
+   function proc2(){
+      ele = $('<p></p>',{
+            'class' : 'p2',
+            'text' : '무궁화 꽃이 피었습니다.',
+            'click' : function(){
+                $(this).css('color',"green")
+            }
+      })
+      
+      $('#result2').append(ele);
+   }
+   
+</script>
 </head>
 <body>
-    <div class="box">
-        <h3></h3>
-        <input type="button" value="확인" onclick="proc1()">
-        <div id="result1"></div>
-    </div>
+
+
+<div class = "box">
+   <h3></h3>
+   <p></p> 
+   <input type="button" value="확인" onclick="proc1()">
+   <div id="result1"></div>
+</div>
+
+<div class = "box">
+   <h3></h3>
+   <p></p> 
+   <input type="button" value="확인" onclick="proc2()">
+   <div id="result2"></div>
+</div>
+
 </body>
 </html>

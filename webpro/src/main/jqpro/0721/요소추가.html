@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href = "../css/msstyle.css">
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>
+        function proc1(){
+            vimg=$('<img>',{
+                'src': '../images/깃허브아이콘.png',
+                'alt' : '깃허브',
+                'click' : function(){
+                    $(this).css('border','5px solid red');
+                }
+            })
+            $('#result1').append(vimg);
+        }
+        $(function(){ //window.onload=function(){}
+            $('#app').on('click',function(){
+                vimg=$('<img onclick="borderpro(this)" src="../images/깃허브아이콘.png" alt="">');
+                vimg.appendTo($('#result1'))
+
+            })
+        })
+
+        function borderpro(vimg){
+            $(vimg).css('border','5px solid blue');
+        }
+    </script>
+    <style>
+        img{
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+            border: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class = "box">
+        <h3></h3>
+        <p></p> 
+        <input type="button" value="이미지주기" onclick="proc1()">
+        <input type="button" id="app" value="이미지추가">
+        <div id="result1"></div>
+     </div>
+</body>
+</html>
