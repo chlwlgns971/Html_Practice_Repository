@@ -8,8 +8,23 @@
     <link rel="stylesheet" href="../css/msstyle.css">
     <script src="../js/jquery-3.6.0.min.js"></script>
     <script>
-        
+        $(document).ready(function(){
+            $('#empty').on('click',function(){
+                $('#result1').empty();
+            })
+            $('#remove').on('click',function(){
+                $('#result2').remove();
+            })
+        })
     </script>
+    <style>
+        #result1{
+            background: lightcoral;
+        }
+        #result2{
+            background: lightblue;
+        }
+    </style>
 </head>
 <body>
     <div class="box">

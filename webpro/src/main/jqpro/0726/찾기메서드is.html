@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/msstyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('#btn1').on('click',function(){
+                        
+            })
+
+            $('p').on('click',function(){
+                r=parseInt(Math.random()*256).toString(16);
+                g=parseInt(Math.random()*256).toString(16);
+                b=parseInt(Math.random()*256).toString(16);
+                rand='#'+r+g+b
+                if($(this).parent().is('.dred')) $(this).clone().appendTo($(this).parent()).css('color',rand)
+                else alert("작업대상이 아닙니다")      
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="box">
+        <h3></h3>
+        <input type="button" id="btn1" value="확인">
+        <div id="result1">
+            <div class="dred">
+                <p>Blueming</p>
+            </div>
+            <p>How to Love</p>
+            <div class="dred">
+                <p>Reforget</p>
+            </div>
+        </div>
+   </div>
+</body>
+</html>

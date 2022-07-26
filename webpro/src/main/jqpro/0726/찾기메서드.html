@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/msstyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('#next').on('click',function(){
+                $('#result1 h2').next().css({'color':'red',"border":"2px solid"})
+            })
+
+            $('#nexta').on('click',function(){
+                $('#result1 h2').nextAll().css({'color':'yellow',"border":"2px solid"})
+            })
+
+            $('#nextu').on('click',function(){
+                $('#result1 h2').nextUntil('#result1 h6').css({'color':'green',"border":"2px solid"})
+            })
+
+            $('#prev').on('click',function(){
+                $('#result2 h4').prev().css({'color':'red',"border":"2px solid"})
+            })
+
+            $('#preva').on('click',function(){
+                $('#result2 h4').prevAll().css({'color':'yellow',"border":"2px solid"})
+            })
+
+            $('#prevu').on('click',function(){
+                $('#result2 h4').prevUntil('#result2 p').css({'color':'green',"border":"2px solid"})
+            })
+        })
+    </script>
+    <style>
+        .siblings * { 
+          display: block;
+          border: 2px solid lightgrey;
+          color: lightgrey;
+          padding: 5px;
+          margin: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h3></h3>
+        <input type="button" id="next" value="next">
+        <input type="button" id="nexta" value="nextAll">
+        <input type="button" id="nextu" value="nextUntil">
+        <div id="result1" class="siblings">
+            <div>div (parent)
+                <p>p</p>
+                <span>span</span>
+                <h2>h2</h2>
+                <h3>h3</h3>
+                <h4>h4</h4>
+                <h5>h5</h5>
+                <h6>h6</h6>
+                <p>p</p>
+            </div>
+        </div>
+        <input type="button" id="prev" value="prev">
+        <input type="button" id="preva" value="prevAll">
+        <input type="button" id="prevu" value="prevUntil">
+        <div id="result2" class="siblings">
+            <div>div (parent)
+                <p>p</p>
+                <span>span</span>
+                <h2>h2</h2>
+                <h3>h3</h3>
+                <h4>h4</h4>
+                <h5>h5</h5>
+                <h6>h6</h6>
+                <p>p</p>
+            </div>
+        </div>
+   </div>
+</body>
+</html>
