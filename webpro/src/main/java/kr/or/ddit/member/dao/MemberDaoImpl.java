@@ -29,6 +29,17 @@ public class MemberDaoImpl implements MemberDao {
 		}
 		return list;
 	}
+	@Override
+	public MemberVO IdSearch(String id) {
+		MemberVO vo=null;
+		try {
+			vo=(MemberVO) smc.queryForObject("member.searchID",id);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return vo;
+	}
 	
 	
 }

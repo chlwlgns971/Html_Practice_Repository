@@ -8,6 +8,10 @@
 	<select id= "searchAll" resultClass="member">
        select * from member
    	</select>
+   	
+   	<select id= "searchID" parameterClass="String" resultClass="member">
+       select* from member where mem_id=#mem_id#
+   	</select>
 	
 	
 </sqlMap>

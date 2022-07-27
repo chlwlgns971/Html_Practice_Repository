@@ -24,6 +24,8 @@
 	  	형식)<typeAlias alias="alias명" type="클래스의 전체 이름"/>
 	 -->
 	 <typeAlias alias="member" type="kr.or.ddit.member.vo.MemberVO"/>
+	 <typeAlias alias="prod" type="kr.or.ddit.prod.vo.ProdVO"/>
+	  <typeAlias alias="lprod" type="kr.or.ddit.prod.vo.LprodVO"/>
 	 <!-- DB와 연결하는 부분 설정하기 -->
 	 <transactionManager type="JDBC">
 	 	<dataSource type="SIMPLE">
@@ -39,5 +41,6 @@
 	 	형식) <sqlMap resource="경로명/파일명.xml"/>
 	  -->
 	  <sqlMap resource="kr/or/ddit/ibatis/mapping/Member.xml"></sqlMap>
+	  <sqlMap resource="kr/or/ddit/ibatis/mapping/Prod.xml"></sqlMap>
 	  
 </sqlMapConfig>

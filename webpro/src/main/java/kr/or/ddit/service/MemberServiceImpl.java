@@ -21,5 +21,9 @@ public class MemberServiceImpl implements MemberService {
 	public List<MemberVO> searchAll() {
 		return dao.searchAll();
 	}
+	@Override
+	public MemberVO IdSearch(String id) {
+		return dao.IdSearch(id);
+	}
 
 }
