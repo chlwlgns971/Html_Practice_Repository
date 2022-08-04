@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="../CSS/msStyle.css">
+<script>
+	var xhr=new XMLHttpRequest();
+	function proc1() {
+		//request객체를 생성
+		//요청
+		xhr.open('get','/webpro/MemberList',true);
+		xhr.send();
+		
+		//응답 --readyState : 0-1-2-3-4   status : 200,404,500
+		xhr.onreadystatechange=function(){
+			if(this.readyState==4&& this.status==200){
+				res=this.responseText;
+				$('#result1').html(res);
+			}
+		}
+		
+	}
+</script>
+</head>
+<body>
+	<div class="box">
+		<h3>MemberList</h3>
+		location.href = "/webpro/MemberList.cjh"<br>
+		<input type="button" value="확인" onclick="proc1()">
+		<div id="result1">
+			<form action="/webpro/IDSearch" method="post">
+				아이디<input type="text" name="id"><br>
+				<input type="submit" value="전송">
+			</form>
+		</div>
+	</div>
+</body>
+</html>

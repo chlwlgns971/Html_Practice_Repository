@@ -12,6 +12,10 @@
    	<select id= "searchID" parameterClass="String" resultClass="member">
        select* from member where mem_id=#mem_id#
    	</select>
+   	
+   	<select id= "checkById" parameterClass="String" resultClass="string">
+       select mem_id from member where mem_id=#mem_id#
+   	</select>
 	
 	
 </sqlMap>

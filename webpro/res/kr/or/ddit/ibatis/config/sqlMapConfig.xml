@@ -26,6 +26,8 @@
 	 <typeAlias alias="member" type="kr.or.ddit.member.vo.MemberVO"/>
 	 <typeAlias alias="prod" type="kr.or.ddit.prod.vo.ProdVO"/>
 	  <typeAlias alias="lprod" type="kr.or.ddit.prod.vo.LprodVO"/>
+	  <typeAlias alias="buyer" type="kr.or.ddit.buyer.vo.BuyerVO"/>
+	  <typeAlias alias="buyer" type="kr.or.ddit.buyer.vo.BuyerVO"/>
 	 <!-- DB와 연결하는 부분 설정하기 -->
 	 <transactionManager type="JDBC">
 	 	<dataSource type="SIMPLE">
@@ -42,5 +44,6 @@
 	  -->
 	  <sqlMap resource="kr/or/ddit/ibatis/mapping/Member.xml"></sqlMap>
 	  <sqlMap resource="kr/or/ddit/ibatis/mapping/Prod.xml"></sqlMap>
+	  <sqlMap resource="kr/or/ddit/ibatis/mapping/buyer.xml"></sqlMap>
 	  
 </sqlMapConfig>

@@ -6,7 +6,7 @@
 <sqlMap namespace="zip">
 	<!-- list 가져오기 -->
 	<select id= "selectByDong" resultClass="ZipVO" parameterClass="string">
-       select * from ziptb where dong like #data#||'%' 
+       select* from ziptb where dong like #data#||'%' 
    	</select>
 	
 	

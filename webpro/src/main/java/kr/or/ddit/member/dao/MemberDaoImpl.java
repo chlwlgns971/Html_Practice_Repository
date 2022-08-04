@@ -8,38 +8,58 @@ import com.ibatis.sqlmap.client.SqlMapClient;
 import kr.or.ddit.ibatis.config.SqlMapClientFactory;
 import kr.or.ddit.member.vo.MemberVO;
 
-public class MemberDaoImpl implements MemberDao {
-	private static MemberDao dao;
-	private SqlMapClient smc;
+public class MemberDaoImpl  implements MemberDao{
 
-	public MemberDaoImpl() {
-		smc=SqlMapClientFactory.getSmc();
+	//필요한거- SqlMapClient 
+	private SqlMapClient service;
+	
+	//자신의 객체 
+	private static MemberDao dao;
+	
+	//생성자 
+	private  MemberDaoImpl() {
+		service = SqlMapClientFactory.getSmc();
 	}
-	public static MemberDao getInstance() {
-		if(dao==null) dao=new MemberDaoImpl();
+	
+	//자신의 객체를 생성하고 리턴 - service에서 사용 하는 것 
+	public static MemberDao getDao() {
+		if(dao == null)  dao = new  MemberDaoImpl();
 		return dao;
 	}
+	
 	@Override
-	public List<MemberVO> searchAll() {
-		List<MemberVO> list=null;
-		try {
-			list=smc.queryForList("member.searchAll");
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return list;
-	}
-	@Override
-	public MemberVO IdSearch(String id) {
-		MemberVO vo=null;
-		try {
-			vo=(MemberVO) smc.queryForObject("member.searchID",id);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+	public List<MemberVO> selectAll() throws SQLException {
 		
-		return vo;
+		//List<MemberVO>  list = null;
+		//list = client.queryForList("");
+		//return list ;
+		
+		return service.queryForList("member.selectAll");
 	}
-	
-	
+
+	@Override
+	public MemberVO idSearch(String id) throws SQLException {
+		// TODO Auto-generated method stub
+		
+		MemberVO   memId = null;
+		
+		memId = (MemberVO)service.queryForObject("member.idSearch", id);
+		
+		return memId;
+	}
+
+	@Override
+	public String checkById(String id) throws SQLException {
+		// TODO Auto-generated method stub
+		return (String) service.queryForObject("member.checkById", id);
+		
+	}
+
 }
+
+
+
+
+
+
+

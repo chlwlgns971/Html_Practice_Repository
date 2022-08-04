@@ -7,9 +7,22 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="../js/jquery-3.6.0.min.js"></script>
 <script>
+	xhr=new XMLHttpRequest();
 	function proc1(id){
-		location.href="/webpro/IDSearch?id="+id;
+		//location.href="/webpro/IDSearch?id="+id;
+		//요청
+		xhr.open('get','/webpro/IDSearch?id='+id);
+		xhr.send();
+		
+		//응답
+		xhr.onreadystatechange=function(){
+			if(this.readyState==4 && this.status==200){
+				res=this.responseText;
+				$('#detail').html(res);
+			}
+		}
 	}
 </script>
 <style type="text/css">
@@ -45,5 +58,6 @@
 		}
 	%>
 </table>
+<div id="detail"></div>
 </body>
 </html>

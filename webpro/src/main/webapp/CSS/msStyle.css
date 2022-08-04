@@ -29,7 +29,7 @@ img{
     background: lightgrey;
  }
  div.box div{      /* class box의 후손 div */
-    background: #A473FF;
+    background: rgb(255, 255, 255);
     border-top: 1px solid gray;
     border-bottom: 1px solid gray;
     height: auto;
